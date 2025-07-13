@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
 
@@ -8,8 +9,6 @@ class ForgotPasswordPage extends StatefulWidget {
 }
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  bool _notRobot = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +21,23 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               // Logo
               const Image(
                 image: AssetImage('images/logo.jpg'),
-                height: 80,
+                height: 110,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 32),
               // Card
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFEFF8F2),
+                  color: const Color(0xFFF0F4EC),
                   borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.03),
+                      blurRadius: 8,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -45,7 +51,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         color: Colors.black87,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 28),
                     const Text(
                       'Enter the email address to reset your password',
                       textAlign: TextAlign.center,
@@ -54,7 +60,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         color: Colors.black54,
                       ),
                     ),
-                    const SizedBox(height: 22),
+                    const SizedBox(height: 28),
                     TextField(
                       decoration: InputDecoration(
                         hintText: 'Email Address',
@@ -64,24 +70,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                       ),
                     ),
-                    const SizedBox(height: 12),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: _notRobot,
-                          onChanged: (val) {
-                            setState(() {
-                              _notRobot = val ?? false;
-                            });
-                          },
-                        ),
-                        const Text(
-                          'I am not a robot',
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 28),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -92,14 +81,16 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: _notRobot ? () {} : null,
+                        onPressed: () {
+                          // Your submit logic here
+                        },
                         child: const Text(
                           'Submit',
                           style: TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 32),
                     Center(
                       child: GestureDetector(
                         onTap: () {
@@ -118,6 +109,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   ],
                 ),
               ),
+              const SizedBox(height: 32),
             ],
           ),
         ),

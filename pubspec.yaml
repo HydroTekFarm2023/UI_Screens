@@ -92,6 +92,6 @@ flutter:
   fonts:
     - family: DM Sans
       fonts:
-        - asset: fonts/DMSans-Regular.ttf
-        - asset: fonts/DMSans-Bold.ttf
+        - asset: fonts/DM_Sans/static/DMSans-Regular.ttf
+        - asset: fonts/DM_Sans/static/DMSans-Bold.ttf
           weight: 700
