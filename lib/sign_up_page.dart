@@ -49,7 +49,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 28),
                       decoration: BoxDecoration(
-                        color: const Color(0xFFF0F4EC),
+                        color: const Color(0xFFE6F4EA), 
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
@@ -296,12 +296,12 @@ class _SignUpPageState extends State<SignUpPage> {
                                         _phoneError = _phoneController.text.isEmpty
                                             ? 'Please enter your phone number.'
                                             : null;
-                                        // Only proceed if all are valid
+                                        
                                         if (_emailError == null &&
                                             _passwordError == null &&
                                             _confirmPasswordError == null &&
                                             _phoneError == null) {
-                                          // TODO: Add your sign up logic here
+                                          
                                         }
                                       });
                                     }
@@ -319,7 +319,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                     ),
                     const SizedBox(height: 32),
-                    // "back to login" always visible and scrollable
+                    
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
